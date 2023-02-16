@@ -14,11 +14,17 @@ ${BROWSER} =    chrome
 
 
 *** Test Cases ***
-Should be able to view login page
+#Should be able to view login page
+#    [Tags]    landing
+#    MemoApp.Navigate To Login Page
+#    Sleep    5s
+#    MemoApp.Login Using Creator Account    ${CREATOR}
+#    Sleep    5s
+
+Should locate Home Page Elements
     [Tags]    landing
-    MemoApp.Navigate To Login Page
+    MemoApp.Verify Home Page Elements
     Sleep    5s
-    MemoApp.Login Using Creator Account    ${CREATOR}
-    Sleep    5s
+
 
 
