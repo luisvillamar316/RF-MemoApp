@@ -10,10 +10,17 @@ ${MEMOS_TO_WATCH} =    //p[contains(text(), "Memos to watch")]
 ${VIEW_ALL_MEMOS_MY_MEMOS} =    xpath=//a[contains(@href, "memos/active")]
 ${VIEW_ALL_MEMOS_FOR_MY_APPROVAL} =    xpath=//a[contains(@href, "/approvals")]/div
 ${VIEW_ALL_MEMOS_MEMOS_TO_WATCH} =    xpath=//a[contains(@href, "/watch")]/div
+${CREATE_MEMO_MESSAGE} =    //div[contains(text(), 'Create')]
 
 *** Keywords ***
 Verify Create Memo Button
     element should be visible    ${CREATE_MEMO}
+
+Click Create Memo Button
+    click element    ${CREATE_MEMO}
+
+Verify Create Memo Message
+    element should be visible    ${CREATE_MEMO_MESSAGE}
 
 Verify Welcome Message
     element should be visible    ${WELCOME}

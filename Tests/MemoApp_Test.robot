@@ -21,10 +21,22 @@ ${BROWSER} =    chrome
 #    MemoApp.Login Using Creator Account    ${CREATOR}
 #    Sleep    5s
 
-Should locate Home Page Elements
+#Should locate Home Page Elements
+#    [Tags]    landing
+#    MemoApp.Verify Home Page Elements
+#    Sleep    5s
+
+#Should be able to view Create Memo Page
+#    [Tags]    landing
+#    MemoApp.Go to Create Memo Page
+#    Sleep    5s
+
+#Should be able to locate TCOE Elements
+#    [Tags]    landing
+#    MemoApp.Verify Create Memo Page Elements
+#    Sleep    5s
+
+Should be able to view TCOE BAU page
     [Tags]    landing
-    MemoApp.Verify Home Page Elements
+    MemoApp.Go to TCOE BAU Request Page
     Sleep    5s
-
-
-

@@ -6,6 +6,7 @@ Resource   MemoApp.robot
 *** Keywords ***
 Begin Web Test
     Open Browser    about:blank    ${BROWSER}
+    maximize browser window
     MemoApp.Navigate To Login Page
     Sleep    5s
     MemoApp.Login Using Creator Account    ${CREATOR}
