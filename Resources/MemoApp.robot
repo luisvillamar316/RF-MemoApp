@@ -5,7 +5,7 @@ Resource    ./PO/UserLogin.robot
 Resource    ./PO/Homepage.robot
 Resource    ./PO/CreateMemo.robot
 Resource    ./PO/ServiceRequest.robot
-
+Resource    ./PO/MyMemos.robot
 
 *** Keywords ***
 Navigate To Login Page
@@ -65,6 +65,36 @@ Go to TCOE BAU Request Page
     ServiceRequest.Click Submit Button
     sleep    2s
     ServiceRequest.Verify Required Fields
+
+Submit a TCOE BAU Service Request
+    [Arguments]    ${InputData}
+    Homepage.Click Create Memo Button
+    sleep    5s
+    CreateMemo.Verify BAU Title
+    sleep    2s
+    CreateMemo.Click BAU Title
+    sleep    5s
+    ServiceRequest.Verify BAU Service Message
+    sleep    2s
+    Fill out TCOE BAU Service Request    ${InputData}
+    sleep    2s
+#    ServiceRequest.Click Upload Button
+#    sleep    5s
+#    ServiceRequest.Choose file to upload
+#    sleep    5s
+    ServiceRequest.Click Submit Button
+    sleep    5s
+    ServiceRequest.Verify Submitted Message
+    sleep    2s
+    ServiceRequest.Click Confirmed Button
+    sleep    5s
+    MyMemos.Verify My Memo Page Title
+    sleep    2s
+    MyMemos.Verify Created Memo is Present    ${InputData}
+    sleep    2s
+    Homepage.Click Dashboard Button
+    sleep    5s
+    Homepage.Verify Created Memo
 
 
 

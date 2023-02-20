@@ -11,6 +11,7 @@ ${BROWSER} =    chrome
 &{CREATOR}    Email=rpa-techno-prod-2@globe.com.ph    Password=Test12345_Pass!
 &{APPROVER}    Email=rpa-techno-prod-7@globe.com.ph    Password=Test12345_Pass!
 &{WATCHER}    Email=rpa-techno-prod-6@globe.com.p    Password=Test12345_Pass!
+&{INPUT_TEXT}    Name=test-luis    Subject=test-luis    Approver=luis.villamar@globe.com.ph
 
 
 *** Test Cases ***
@@ -36,7 +37,11 @@ ${BROWSER} =    chrome
 #    MemoApp.Verify Create Memo Page Elements
 #    Sleep    5s
 
-Should be able to view TCOE BAU page
+#Should be able to view TCOE BAU page
+#    [Tags]    landing
+#    MemoApp.Go to TCOE BAU Request Page
+#    Sleep    5s
+
+Should submit TCOE BAU memo
     [Tags]    landing
-    MemoApp.Go to TCOE BAU Request Page
-    Sleep    5s
+    MemoApp.Submit a TCOE BAU Service Request    ${INPUT_TEXT}

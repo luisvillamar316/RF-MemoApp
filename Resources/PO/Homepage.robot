@@ -11,6 +11,8 @@ ${VIEW_ALL_MEMOS_MY_MEMOS} =    xpath=//a[contains(@href, "memos/active")]
 ${VIEW_ALL_MEMOS_FOR_MY_APPROVAL} =    xpath=//a[contains(@href, "/approvals")]/div
 ${VIEW_ALL_MEMOS_MEMOS_TO_WATCH} =    xpath=//a[contains(@href, "/watch")]/div
 ${CREATE_MEMO_MESSAGE} =    //div[contains(text(), 'Create')]
+${DASHBOARD} =    //li/div[contains(text(),'Dashboard')]
+${CREATED_MEMO} =    //div/p[contains(text(),'luis')]
 
 *** Keywords ***
 Verify Create Memo Button
@@ -46,4 +48,9 @@ Verify View All Memos For My Approval
 Verify View All Memos Memos to Watch
     element should be visible    ${VIEW_ALL_MEMOS_MEMOS_TO_WATCH}
 
+Click Dashboard Button
+    click element    ${DASHBOARD}
+
+Verify Created Memo
+    scroll element into view    ${CREATED_MEMO}
 
