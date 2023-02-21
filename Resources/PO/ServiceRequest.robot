@@ -11,7 +11,7 @@ ${REQUIRED_FIELD} =    xpath=//p[contains(text(), 'This')]
 ${PROJECT_NAME_BOX} =    id=mi8qnavlRGYLc2QFDCTzU
 ${SUBJECT_BOX} =    xpath=//*[@id='TEXT_SUBJECT']
 ${APPROVER_BOX} =    xpath=//input[contains(@name, "pro")]
-${UPLOAD} =    xpath=//div[@class='w-full h-auto flex flex-col']/button
+${UPLOAD} =    xpath=//div/input[@data-testid='file-upload']
 ${SUBMIT_MESSAGE} =    xpath=//div[contains(text(),'Your memo has been submitted')]
 ${CONFIRM_BUTTON} =    xpath=//div[@data-testid='modal-content']/div/button
 ${APPROVER_RESULT} =    xpath=//div[contains(@data-email, "luis")]
@@ -48,10 +48,10 @@ Fill out TCOE BAU Service Request
     sleep    2s
     scroll element into view    ${SUBJECT_BOX}
     Fill Subject    ${InputData.Subject}
-    sleep    2s
+    sleep    5s
     scroll element into view    ${APPROVER_BOX}
     Fill Approver    ${InputData.Approver}
-    sleep    5s
+    sleep    20s
     click element    ${APPROVER_RESULT}
 
 

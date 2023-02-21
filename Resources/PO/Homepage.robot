@@ -54,3 +54,13 @@ Click Dashboard Button
 Verify Created Memo
     scroll element into view    ${CREATED_MEMO}
 
+Cancel Memo
+    click element   ${CREATED_MEMO}
+    sleep    5s
+    scroll element into view    xpath=//button[contains(text(),'Cancel Memo')]
+    click element    xpath=//button[contains(text(),'Cancel Memo')]
+    sleep    5s
+    click element    xpath=//button[contains(text(),'Proceed')]
+    sleep    5s
+    wait until element is visible    xpath=//div[contains(text(),'Memo cancelled')]
+

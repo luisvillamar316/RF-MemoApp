@@ -36,7 +36,7 @@ Go to Create Memo Page
 
 Verify Create Memo Page Elements
     Homepage.Click Create Memo Button
-    sleep    5s
+    sleep    10s
     CreateMemo.Verify BAU Title
     sleep    2s
     CreateMemo.Verify Change Request Title
@@ -75,17 +75,17 @@ Submit a TCOE BAU Service Request
     CreateMemo.Click BAU Title
     sleep    5s
     ServiceRequest.Verify BAU Service Message
-    sleep    2s
+    sleep    5s
     Fill out TCOE BAU Service Request    ${InputData}
-    sleep    2s
+    sleep    5s
 #    ServiceRequest.Click Upload Button
 #    sleep    5s
-#    ServiceRequest.Choose file to upload
-#    sleep    5s
+    ServiceRequest.Choose file to upload
+    sleep    5s
     ServiceRequest.Click Submit Button
     sleep    5s
     ServiceRequest.Verify Submitted Message
-    sleep    2s
+    sleep    5s
     ServiceRequest.Click Confirmed Button
     sleep    5s
     MyMemos.Verify My Memo Page Title
@@ -96,5 +96,8 @@ Submit a TCOE BAU Service Request
     sleep    5s
     Homepage.Verify Created Memo
 
+Cancel Created Memo
+    Homepage.Verify Welcome Message
+    Homepage.Cancel Memo
 
 

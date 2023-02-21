@@ -15,33 +15,30 @@ ${BROWSER} =    chrome
 
 
 *** Test Cases ***
-#Should be able to view login page
-#    [Tags]    landing
-#    MemoApp.Navigate To Login Page
-#    Sleep    5s
-#    MemoApp.Login Using Creator Account    ${CREATOR}
-#    Sleep    5s
+Should locate Home Page Elements
+    [Tags]    Smoke
+    MemoApp.Verify Home Page Elements
+    Sleep    5s
 
-#Should locate Home Page Elements
-#    [Tags]    landing
-#    MemoApp.Verify Home Page Elements
-#    Sleep    5s
+Should be able to view Create Memo Page
+    [Tags]    Smoke
+    MemoApp.Go to Create Memo Page
+    Sleep    5s
 
-#Should be able to view Create Memo Page
-#    [Tags]    landing
-#    MemoApp.Go to Create Memo Page
-#    Sleep    5s
+Should be able to locate TCOE Elements
+    [Tags]    Smoke
+    MemoApp.Verify Create Memo Page Elements
+    Sleep    5s
 
-#Should be able to locate TCOE Elements
-#    [Tags]    landing
-#    MemoApp.Verify Create Memo Page Elements
-#    Sleep    5s
+Should be able to view TCOE BAU page
+    [Tags]    Smoke
+    MemoApp.Go to TCOE BAU Request Page
+    Sleep    5s
 
-#Should be able to view TCOE BAU page
-#    [Tags]    landing
-#    MemoApp.Go to TCOE BAU Request Page
-#    Sleep    5s
-
-Should submit TCOE BAU memo
-    [Tags]    landing
+Should be able to submit TCOE BAU memo and verify memo
+    [Tags]    Smoke
     MemoApp.Submit a TCOE BAU Service Request    ${INPUT_TEXT}
+    sleep    5s
+
+Cleanup
+    MemoApp.Cancel Created Memo
